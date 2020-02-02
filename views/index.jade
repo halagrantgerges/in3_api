@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1(id = "MyID") #{title}
+  p Welcome to #{title}
+
+  ul
+  each val in task
+    li=val
