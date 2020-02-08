@@ -3,9 +3,10 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 
-var Env = '',
   DBConfig = '';
-  DBConfig = fs.readFileSync('/home/hala/in3_api/Credentials.json', 'utf8');
+
+//read Credentials.json to load DB configurations
+  DBConfig = fs.readFileSync('Credentials.json', 'utf8');
   DBConfig = JSON.parse(DBConfig);
 var DBUsername = process.env.DBUsername || DBConfig.DBUsername;
 var DBpassword = process.env.DBpassword || DBConfig.DBpassword;

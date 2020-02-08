@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize');
 const fs = require('fs');
-
+//read Credentials.json to load DB configurations
   DBConfig = '';
-    DBConfig = fs.readFileSync('/home/hala/in3_api/Credentials.json', 'utf8');
+    DBConfig = fs.readFileSync('Credentials.json', 'utf8');
     DBConfig = JSON.parse(DBConfig);
 var DBUsername = process.env.DBUsername || DBConfig.DBUsername;
 var DBpassword = process.env.DBpassword || DBConfig.DBpassword;

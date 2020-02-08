@@ -1,15 +1,8 @@
-
+//express liberary for routing
 const express = require('express');
 const path = require('path');
-
-// eslint-disable-next-line
 const bodyParser = require('body-parser');
-
-// eslint-disable-next-line
 const cors = require('cors');
-// eslint-disable-next-line
-
-const sqlinjection = require('sql-injection');
 const app = express();
 const Tasks = require('./routes');
 // view engine setup
@@ -24,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-
+// create router for Tasks 
 app.use('/API/V1/Tasks', Tasks);
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -33,12 +26,9 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-// eslint-disable-next-line
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');
