@@ -1,0 +1,8 @@
+version: "3"
+services:
+  in3_api:
+    build: .
+    volumes:
+      - "./app:/src/app"
+    ports:
+      - "3333:3333"
