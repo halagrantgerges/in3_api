@@ -19,7 +19,7 @@
     "express-status-monitor": "^1.0.1",
     "generate-password": "^1.4.2",
     "jade": "~1.11.0",
-    "moment-timezone": "^0.5.14",
+    "moment-timezone": "^0.5.35",
     "morgan": "^1.9.1",
     "mysql": "^2.15.0",
     "mysql2": "^1.4.2",
